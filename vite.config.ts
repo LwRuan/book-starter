@@ -14,6 +14,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import 'markdown-it-texmath'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -87,6 +88,10 @@ export default defineConfig({
       markdownItSetup(md) {
         // https://prismjs.com/
         md.use(Prism)
+        md.use(require('markdown-it-texmath'), {
+          engine: require('katex'),
+          delimiters: 'dollars',
+        })
         md.use(LinkAttributes, {
           pattern: /^https?:\/\//,
           attrs: {
