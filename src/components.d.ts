@@ -13,7 +13,11 @@ declare module 'vue' {
     CarbonSun: typeof import('~icons/carbon/sun')['default']
     CarbonWarning: typeof import('~icons/carbon/warning')['default']
     Footer: typeof import('D:/lwruan/book-starter/src/components/Footer.vue')['default']
+    IconCarbonBook: typeof import('~icons/carbon/book')['default']
     IconCarbonCampsite: typeof import('~icons/carbon/campsite')['default']
+    IconCarbonCaretRight: typeof import('~icons/carbon/caret-right')['default']
+    IconCarbonChevronMini: typeof import('~icons/carbon/chevron-mini')['default']
+    IconCarbonChevronRight: typeof import('~icons/carbon/chevron-right')['default']
     IconCarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     IconCarbonLanguage: typeof import('~icons/carbon/language')['default']
     IconCarbonLogoGithub: typeof import('~icons/carbon/logo-github')['default']
@@ -21,8 +25,10 @@ declare module 'vue' {
     IconCarbonSun: typeof import('~icons/carbon/sun')['default']
     LambertMaterial: typeof import('~icons/la/mbert-material')['default']
     PhysicalMaterial: typeof import('~icons/ph/ysical-material')['default']
+    Post: typeof import('D:/lwruan/book-starter/src/components/Post.vue')['default']
     README: typeof import('D:/lwruan/book-starter/src/components/README.md')['default']
     Three: typeof import('D:/lwruan/book-starter/src/components/Three.vue')['default']
+    TOC: typeof import('D:/lwruan/book-starter/src/components/TOC.vue')['default']
   }
 }
 

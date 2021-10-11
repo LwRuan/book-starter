@@ -10,3 +10,6 @@ declare module '*.md' {
   const component: ComponentOptions
   export default component
 }
+
+declare module 'markdown-it-texmath'
+declare module 'fs-extra'

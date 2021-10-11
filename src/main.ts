@@ -15,6 +15,12 @@ import 'virtual:windi-utilities.css'
 import 'virtual:windi-devtools'
 import 'katex/dist/katex.min.css'
 
+declare module 'vue-router' {
+  interface RouteMeta {
+    'frontmatter': any
+  }
+}
+
 const routes = setupLayouts(generatedRoutes)
 
 // https://github.com/antfu/vite-ssg

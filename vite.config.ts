@@ -14,7 +14,9 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
-import 'markdown-it-texmath'
+import Texmath from 'markdown-it-texmath'
+import fs from 'fs-extra'
+import matter from 'gray-matter'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -32,6 +34,19 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
+      extendRoute(route) {
+        const tpath = path.resolve(__dirname, route.component.slice(1))
+        let tdata = {}
+        if (tpath.includes('pages\\book') && !tpath.endsWith('book\\index.md')) {
+          const md = fs.readFileSync(tpath, 'utf-8')
+          tdata = matter(md).data
+          // route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+        }
+        return {
+          ...route,
+          meta: { frontmatter: tdata },
+        }
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -83,12 +98,13 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-md
     // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
     Markdown({
+      wrapperComponent: 'post',
       wrapperClasses: markdownWrapperClasses,
       headEnabled: true,
       markdownItSetup(md) {
         // https://prismjs.com/
         md.use(Prism)
-        md.use(require('markdown-it-texmath'), {
+        md.use(Texmath, {
           engine: require('katex'),
           delimiters: 'dollars',
         })
