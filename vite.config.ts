@@ -17,6 +17,9 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Texmath from 'markdown-it-texmath'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+import MarkdownItAnchor from 'markdown-it-anchor'
+import MarkdownItToc from 'markdown-it-toc-done-right'
+import Slugify from 'slugify'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -115,6 +118,8 @@ export default defineConfig({
             rel: 'noopener',
           },
         })
+        md.use(MarkdownItAnchor, { slugify: s => Slugify(s) })
+        md.use(MarkdownItToc)
       },
     }),
 

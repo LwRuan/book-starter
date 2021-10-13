@@ -8,4 +8,4 @@ The visual is employed to illustrate our imaginations, to virtualize reality, an
 
 ## <icon-carbon-book/> Table of Content
 
-<TOC />
+<ListPages />

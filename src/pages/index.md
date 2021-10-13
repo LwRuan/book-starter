@@ -1,28 +1,30 @@
 ---
-title: About
+title: VCL-Book Starter
 ---
 
+[toc]
+
+## 文档结构
+
+书籍的所有页面在src/pages/book下，基本结构为：
+```
+index.md
+chapter1
+  - index.md
+  - 01-foo.md
+  - 02-bar.md
+...
+```
+最外层的index.md为整个书籍的简介，点击右上角的<icon-carbon-book/>图标进入的就是这个界面，其中的目录是自动生成的，但是每次更新目录结构之后都需要重新生成，不能热更新。各个章节的目录名请使用chapter[1-9]，这是为了保证自动生成目录时顺序正确。各个章节的标题在各个章节下的index.md里，
+
+
+## 图片
+
+## 代码
+## 3D动画
+
 <div class="text-center">
-  <!-- You can use Vue components inside markdown -->
-  <icon-carbon-dicom-overlay class="text-4xl -mb-6 m-auto" />
-  <h3>About</h3>
+  <Three />
 </div>
 
-[Vitesse](https://github.com/antfu/vitesse) is an opinionated [Vite](https://github.com/vitejs/vite) starter template made by [@antfu](https://github.com/antfu) for mocking apps swiftly. With **file-based routing**, **components auto importing**, **markdown support**, I18n, PWA and uses **WindiCSS** for UI.
-
-```js
-// syntax highlighting example
-function vitesse() {
-  const foo = 'bar'
-  console.log(foo)
-}
-```
-
-$a=b+c$
-$\mathbf{G}_{\mu\nu}$
-$\bm{F}$
-$$F=ma$$
-
-Check out the [GitHub repo](https://github.com/antfu/vitesse) for more details.
-
-<Three />
+## 数学公式

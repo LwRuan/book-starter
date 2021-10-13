@@ -18,7 +18,7 @@ export default defineComponent({
   components: { Box, Camera, PhysicalMaterial, PointLight, Renderer, Scene },
   mounted() {
     const renderer = this.$refs.renderer as RendererPublicInterface
-    renderer.three.setSize(640, 480)
+    renderer.three.setSize(500, 300)
     const box = this.$refs.box as MeshPublicInterface
     if (renderer && box) {
       renderer.onBeforeRender(() => {

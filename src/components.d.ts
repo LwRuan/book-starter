@@ -24,6 +24,8 @@ declare module 'vue' {
     IconCarbonMoon: typeof import('~icons/carbon/moon')['default']
     IconCarbonSun: typeof import('~icons/carbon/sun')['default']
     LambertMaterial: typeof import('~icons/la/mbert-material')['default']
+    ListPages: typeof import('D:/lwruan/book-starter/src/components/ListPages.vue')['default']
+    NavBar: typeof import('D:/lwruan/book-starter/src/components/NavBar.vue')['default']
     PhysicalMaterial: typeof import('~icons/ph/ysical-material')['default']
     Post: typeof import('D:/lwruan/book-starter/src/components/Post.vue')['default']
     README: typeof import('D:/lwruan/book-starter/src/components/README.md')['default']

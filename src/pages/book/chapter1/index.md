@@ -1,5 +1,5 @@
 ---
-title: Introduction to chapter 1
+title: 第一章：视觉计算总览
 type: chapter
 ---
 
