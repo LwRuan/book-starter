@@ -17,9 +17,9 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Texmath from 'markdown-it-texmath'
 import fs from 'fs-extra'
 import matter from 'gray-matter'
+import toc from 'markdown-toc'
 import MarkdownItAnchor from 'markdown-it-anchor'
-import MarkdownItToc from 'markdown-it-toc-done-right'
-import Slugify from 'slugify'
+import uslug from 'uslug'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -40,14 +40,19 @@ export default defineConfig({
       extendRoute(route) {
         const tpath = path.resolve(__dirname, route.component.slice(1))
         let tdata = {}
+        let tocData = {}
         if (tpath.includes('book')) {
           const md = fs.readFileSync(tpath, 'utf-8')
           tdata = matter(md).data
+          tocData = toc(md).json
           // route.meta = Object.assign(route.meta || {}, { frontmatter: data })
         }
         return {
           ...route,
-          meta: { frontmatter: tdata },
+          meta: {
+            frontmatter: tdata,
+            toc: tocData,
+          },
         }
       },
     }),
@@ -118,8 +123,10 @@ export default defineConfig({
             rel: 'noopener',
           },
         })
-        md.use(MarkdownItAnchor, { slugify: s => Slugify(s) })
-        md.use(MarkdownItToc)
+        md.use(MarkdownItAnchor, {
+          permalink: MarkdownItAnchor.permalink.headerLink(),
+          slugify: s => uslug(s)
+        })
       },
     }),
 

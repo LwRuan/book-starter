@@ -2,12 +2,12 @@
   <div class="fixed left-0 right-0">
     <NavBar />
   </div>
-  <div class="no-scrollbar border dark:text-gray-200 fixed left-4 w-80 overflow-y-scroll top-16 bottom-4">
+  <div class="no-scrollbar border dark:text-gray-200 fixed left-4 w-70 overflow-y-scroll top-16 bottom-4">
     <SideBar />
   </div>
-  <main class="fixed left-80 right-0 top-16 bottom-0 overflow-y-scroll text-center text-gray-700 dark:text-gray-200">
+  <body class="fixed left-80 right-0 top-16 bottom-0 overflow-y-scroll text-center text-gray-700 dark:text-gray-200">
     <router-view />
-  </main>
+  </body>
 </template>
 
 <style scoped>

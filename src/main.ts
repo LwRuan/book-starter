@@ -17,7 +17,8 @@ import 'katex/dist/katex.min.css'
 
 declare module 'vue-router' {
   interface RouteMeta {
-    'frontmatter': any
+    'frontmatter': any,
+    'toc': any,
   }
 }
 

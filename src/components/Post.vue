@@ -1,9 +1,7 @@
 <script setup lang='ts'>
 import { isClient } from '@vueuse/core'
-
 const route = useRoute()
 const { frontmatter } = defineProps<{ frontmatter: any }>()
-
 if (isClient) {
   const navigate = () => {
     if (location.hash) {

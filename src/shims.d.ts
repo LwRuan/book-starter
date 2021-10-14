@@ -13,3 +13,4 @@ declare module '*.md' {
 
 declare module 'markdown-it-texmath'
 declare module 'fs-extra'
+declare module 'uslug'
