@@ -1,0 +1,24 @@
+<template>
+  <ul class="px-10 grid text-xl gap-30">
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+    <li>Coffee</li>
+    <li>Milk</li>
+  </ul>
+</template>

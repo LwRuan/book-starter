@@ -40,7 +40,7 @@ export default defineConfig({
       extendRoute(route) {
         const tpath = path.resolve(__dirname, route.component.slice(1))
         let tdata = {}
-        if (tpath.includes('pages\\book') && !tpath.endsWith('book\\index.md')) {
+        if (tpath.includes('book')) {
           const md = fs.readFileSync(tpath, 'utf-8')
           tdata = matter(md).data
           // route.meta = Object.assign(route.meta || {}, { frontmatter: data })

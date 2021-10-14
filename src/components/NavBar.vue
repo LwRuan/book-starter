@@ -1,10 +1,10 @@
 <template>
-  <header class="m-6 text-2xl font-bold text-gray-700 dark:text-gray-200">
-    <nav class="grid grid-flow-col">
+  <header class="h-16 p-3 text-2xl font-bold text-gray-700 dark:text-gray-200">
+    <nav class="flex flex-row">
       <router-link
         to="/"
         focusable="false"
-        class="w-8 h-8 flex"
+        class="w-8 h-8"
       >
         <img src="/vcl-logo.png">
       </router-link>

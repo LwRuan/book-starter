@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import fs from 'fs-extra'
-
-const props = defineProps<{
-  type?: string
-}>()
 
 const router = useRouter()
 const routes = router.getRoutes()
   .filter(i => i.path.startsWith('/book') && i.meta.frontmatter)
   .filter(i => !i.path.endsWith('book'))
   .sort((a, b) => (a.path).localeCompare(b.path))
+
+for (const r of routes)
+  console.log(r.meta)
 
 </script>
 <template>
